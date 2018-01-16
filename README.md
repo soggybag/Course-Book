@@ -2,6 +2,7 @@
 
 Course Book makes it easy to track students in a course, call on students randomly, and pair them into random groups. 
 
+Test it live [here](http://webdevils.com/course-book/).
 
 ## Todos
 
