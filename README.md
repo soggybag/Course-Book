@@ -9,3 +9,13 @@ Course Book is in alpha and such still needs a lot of work.
 
 - UI Improvements
 - Hosting
+- Wrap up as a framework
+- Split into logical working files
+- Add styles 
+
+### Future directions 
+
+Possible future directions
+
+- React front end
+- Serverside storage
