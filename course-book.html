@@ -54,7 +54,7 @@
   // - Define CourseBook
   function CourseBook() {
     this.loadCourses();
-    this.currentCourse = this.courses.length ? 0 : -1
+    this.currentCourse = this.courses.length === 0 ? 0 : -1
   }
 
   // - CourseBook name for local storage
@@ -82,10 +82,11 @@
   // - Load course from local storage
   CourseBook.prototype.loadCourses = function() {
     const coursesStr = localStorage.getItem(CourseBook.name)
-    if (coursesStr) {
-      this.courses = JSON.parse(coursesStr)
-    } else {
+    
+    if (coursesStr === null) {
       this.courses = []
+    } else {
+      this.courses = JSON.parse(coursesStr)
     }
   }
 
@@ -129,7 +130,11 @@
 
   // - Get Current Course name 
   CourseBook.prototype.getCurrentCourseName = function() {
-    return this.courses[this.currentCourse].name
+    const course = this.courses[this.currentCourse]
+    if (course) {
+      return course.name
+    }
+    return undefined
   }
 
   // - Select current course
@@ -169,8 +174,9 @@
 
   // - Get Students 
   CourseBook.prototype.getStudents = function() {
-    if (this.currentCourse != -1) {
-      return this.courses[this.currentCourse].students.slice()
+    const course = this.courses[this.currentCourse]
+    if (course !== undefined) {
+      return course.students.slice()
     }
     return false
   }
@@ -208,11 +214,13 @@
 
   // - Get student pairs
   CourseBook.prototype.getPairs = function() {
-    if (this.currentCourse === -1) {
-      throw new Error("Must choose course before getting pairs")
+    const course = this.courses[this.currentCourse]
+    console.log(course)
+    if (course === undefined) {
+      return undefined
     }
 
-    return this.courses[this.currentCourse].pairs
+    return course.pairs
   }
 
   // - Pick student
@@ -342,6 +350,11 @@
     
     function showPairs() {
       const pairs = courseBook.getPairs()
+      console.log("pairs", pairs)
+      if (pairs === undefined) {
+        $("#show-pairs").html("no pairs")
+        return 
+      }
       let str = ""
       for (let i = 0; i < pairs.length; i++) {
         str += `<li>Pair ${i+1} <ul>`
@@ -421,6 +434,7 @@
       const newCourseName = $('#new-course-name').val()
       if (newCourseName.length > 0) {
         courseBook.addCourse(newCourseName)  
+        $('#new-course-name').val()
         refresh()
       }
     })
@@ -429,7 +443,8 @@
       e.preventDefault()
       const newStudentName = $('#new-student-name').val()
       if (newStudentName.length > 0) {
-        courseBook.addStudent(newStudentName)  
+        courseBook.addStudent(newStudentName)
+        $('#new-student-name').val("")
         refresh()
       }
     })
