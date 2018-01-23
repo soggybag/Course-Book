@@ -1,70 +1,3 @@
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="./styles.css">
-
-
-<div id="main">
-  <!-- Sho list of courses -->
-  <div id="courses-list">
-
-  </div>
-
-  <!-- Show Current Course title -->
-  <h1 align="center" id="current-course-name"></h1>
-
-  <h2 align="center" id="random-student"></h2>
-
-
-  <!-- Choose a random student -->
-  <div class="randombox draggable" id="">
-    <div><button id="pick-random-student">Pick Random</button></div>
-    <button id="pick-pairs">Pick Pairs</button>
-
-  </div>
-
-  <!-- Shows list of students in random order -->
-  <div class="studentlistbox draggable">
-    <ul id="students-list">
-
-    </ul>
-  </div>
-  <!-- Shows pairs of students <-->
-  <div class="pairsbox draggable">
-    <ul font-size: 190%; id="show-pairs">
-      <!-- Show Pairs -->
-    </ul>
-  </div>
-
-  <div class="addingbox draggable">
-    <h1 align="center">Adding Box</h1>
-    <!-- Add a new student -->
-    <form id="add-new-student">
-      <input type="text" id="new-student-name">
-      <button class="btn-primary" type="submit">Add New student</button>
-    </form>
-
-    <!-- Add a new course -->
-    <form id="add-new-course">
-      <input type="text" id="new-course-name">
-      <button class="btn-primary" type="submit">Add New Course</button>
-    </form>
-  </div><!--addingbox-->
-
-  <!-- Delete Course Button -->
-  <div class="trashcan draggable">
-    <button class="btn-danger" id="delete-current-course">Delete Current Course</button><br />
-    <button class="btn-danger" id="delete-current-student">Delete Current Student</button>
-  </div>
-</div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script>
   // TODO: Wrap this in a IIF
   // **************************************************
   // CourseBook
@@ -338,9 +271,7 @@
   */
   // console.log(courseBook)
 
-</script>
 
-<script>
   (function() {
     function showCourses() {
       const courses = courseBook.getCourses()
@@ -468,11 +399,4 @@
       }
     })
 
-    $(".draggable").draggable();
-
-
-
-
   })()
-
-</script>
