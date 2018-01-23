@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <title></title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="main">
+    <!-- Show list of courses -->
+    <div id="courses-list">
+
+    </div>
+
+    <!-- Show Current Course title -->
+    <h1 id="current-course-name"></h1>
+
+    <!-- Choose a random student -->
+    <div id="">
+      <h2 id="random-student"></h2>
+      <div><button id="pick-random-student">Pick Random</button></div>
+    </div>
+
+    <!-- Shows list of students in random order -->
+    <ul id="students-list">
+
+    </ul>
+
+    <!-- Shows pairs of students <-->
+    <div>
+      <button id="pick-pairs">Pick Pairs</button>
+      <ul id="show-pairs">
+        <!-- Show Pairs -->
+      </ul>
+    </div>
+
+    <!-- Add a new student -->
+    <form id="add-new-student">
+      <input type="text" id="new-student-name">
+      <button type="submit">Add New student</button>
+    </form>
+
+    <!-- Add a new course -->
+    <form id="add-new-course">
+      <input type="text" id="new-course-name">
+      <button type="submit">Add New Course</button>
+    </form>
+
+    <!-- Delete Course Button -->
+    <div>
+      <button id="delete-current-course">Delete Current Course</button>
+      <button id="delete-current-student">Delete Current Student</button>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="course-book.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
