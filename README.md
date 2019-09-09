@@ -48,7 +48,14 @@ Course Book is in alpha and such still needs a lot of work.
 
 Possible future directions
 
+- Styles
+  - Mobile firendly
 - React front end
+- GH Pages 
+- PWA
+  - [React PWA](https://blog.bitsrc.io/how-to-build-a-react-progressive-web-application-pwa-b5b897df2f0a)
 - Serverside storage
+  - Firbase?
+  - [github-db](https://www.npmjs.com/package/github-db)
 - Import CSV and JSON
 - Export 
